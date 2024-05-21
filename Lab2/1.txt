@@ -1,0 +1,20 @@
+mkdir C:\lab1\1
+mkdir C:\lab1\2
+mkdir C:\lab1\1\AA
+mkdir C:\lab1\1\AA\AA1
+mkdir C:\lab1\1\AA\AA2
+
+xcopy C:\Windows\System32\b*.exe C:\lab1\1 /Y    
+xcopy "C:\Windows\???.*" C:\lab1\2 /Y              
+cd C:\lab1\2 
+for /f "delims=" %f in ('dir /b') do ren "%f" "aa%f"
+
+cd C:\lab1\1
+tree /f
+
+systeminfo > C:\lab1\1\AA\AA1\computer_info.txt
+ver > C:\lab1\1\AA\AA2\windows_version.txt
+
+cd C:\lab1
+rmdir /s /q 1
+rmdir /s /q 2
